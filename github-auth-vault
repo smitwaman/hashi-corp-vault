@@ -1,0 +1,31 @@
+▬▬▬▬▬▬ ⭐️ Token and GitHub Authentication commands ⭐️ ▬▬▬▬▬▬ 
+
+1. Create token 
+$ vault token create
+
+2. Vault login
+$ vault login 
+
+3. Revoke token
+$ vault token revoke YOUR_TOKEN_STRING
+
+4. List all authentication methods
+$ vault auth list
+
+5. Enable GitHub Authentication
+$ vault auth enable GitHub
+
+6. Create Organization in HashiCorp vault
+$ vault write auth/github/config organization=jhooq-test-org-2
+
+7. Create team
+$ vault write auth/github/map/teams/my-teams value=default,application
+
+8. Vault login using Github Method
+$ vault login -method=github
+
+9. Revoke Github Authentication
+$ vault token revoke -mode path auth/github
+
+10. Disable Github Authentication
+$ vault auth disbale github
