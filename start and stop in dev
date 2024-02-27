@@ -1,0 +1,9 @@
+▬▬▬▬▬▬ ⭐️ Starting HashiCorp Vault Server in Development mode ⭐️ ▬▬▬▬▬▬ 
+
+Step 1 : CLI Command for starting the server - vault server -dev
+
+Step 2 : Set VAULT_ADDR by exporting to environment variable - export VAULT_ADDR='http://127.0.0.1:8200'
+
+Step 3 : Set Root Token by exporting to environment variable - export VAULT_TOKEN="hvs.6j4cuewowBGit65rheNoceI7"
+
+Step 4 : Verify the status of vault server by running the command - $ vault status
