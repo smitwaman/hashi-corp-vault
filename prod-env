@@ -1,0 +1,35 @@
+▬▬▬▬▬▬ ⭐️ Dynamic Secrets generation commands ⭐️ ▬▬▬▬▬▬ 
+
+1. Unset development token
+$ unset VAULT_TOKEN
+
+2. Vault's config.hcl 
+storage "raft" {
+  path    = "./vault/data"
+  node_id = "node1"
+}
+
+listener "tcp" {
+  address     = "127.0.0.1:8200"
+  tls_disable = "true"
+}
+
+api_addr = "http://127.0.0.1:8200"
+cluster_addr = "https://127.0.0.1:8201"
+ui = true
+
+
+3. Create "RAFT" storage backend directory
+$ mkdir -p ./vault/data
+
+4. Starting vault server using config.hcl 
+$ vault server -config=config.hcl
+
+5. Export VAULT_ADDR
+$ export VAULT_ADDR='http://127.0.0.1:8200'
+
+6. Initialize vault
+$ vault operator init
+
+7. Unseal vault
+$ vault operator unseal
