@@ -1,7 +1,87 @@
 ▬▬▬▬▬▬ ⭐️ Starting HashiCorp Vault Server in Development mode ⭐️ ▬▬▬▬▬▬ 
 
 Step 1 : CLI Command for starting the server - vault server -dev
+ vault server -dev
+==> Vault server configuration:
 
+Administrative Namespace:
+             Api Address: http://127.0.0.1:8200
+                     Cgo: disabled
+         Cluster Address: https://127.0.0.1:8201
+   Environment Variables: DBUS_SESSION_BUS_ADDRESS, DISPLAY, GODEBUG, GOTRACEBACK, HOME, HOSTTYPE, LANG, LESSCLOSE, LESSOPEN, LOGNAME, LS_COLORS, NAME, PATH, PULSE_SERVER, PWD, SHELL, SHLVL, TERM, USER, WAYLAND_DISPLAY, WSL2_GUI_APPS_ENABLED, WSLENV, WSL_DISTRO_NAME, WSL_INTEROP, WT_PROFILE_ID, WT_SESSION, XDG_DATA_DIRS, XDG_RUNTIME_DIR, _
+              Go Version: go1.21.5
+              Listener 1: tcp (addr: "127.0.0.1:8200", cluster address: "127.0.0.1:8201", max_request_duration: "1m30s", max_request_size: "33554432", tls: "disabled")
+               Log Level:
+                   Mlock: supported: true, enabled: false
+           Recovery Mode: false
+                 Storage: inmem
+                 Version: Vault v1.15.5, built 2024-01-26T14:53:40Z
+             Version Sha: 0d8b67ef63815f20421c11fe9152d435af3403e6
+
+==> Vault server started! Log data will stream in below:
+
+2024-02-27T10:51:12.706+0530 [INFO]  proxy environment: http_proxy="" https_proxy="" no_proxy=""
+2024-02-27T10:51:12.707+0530 [INFO]  incrementing seal generation: generation=1
+2024-02-27T10:51:12.707+0530 [WARN]  no `api_addr` value specified in config or in VAULT_API_ADDR; falling back to detection if possible, but this value should be manually set
+2024-02-27T10:51:12.708+0530 [INFO]  core: Initializing version history cache for core
+2024-02-27T10:51:12.708+0530 [INFO]  events: Starting event system
+2024-02-27T10:51:12.709+0530 [INFO]  core: security barrier not initialized
+2024-02-27T10:51:12.709+0530 [INFO]  core: security barrier initialized: stored=1 shares=1 threshold=1
+2024-02-27T10:51:12.710+0530 [INFO]  core: post-unseal setup starting
+2024-02-27T10:51:12.724+0530 [INFO]  core: loaded wrapping token key
+2024-02-27T10:51:12.724+0530 [INFO]  core: successfully setup plugin runtime catalog
+2024-02-27T10:51:12.724+0530 [INFO]  core: successfully setup plugin catalog: plugin-directory=""
+2024-02-27T10:51:12.724+0530 [INFO]  core: no mounts; adding default mount table
+2024-02-27T10:51:12.726+0530 [INFO]  core: successfully mounted: type=cubbyhole version="v1.15.5+builtin.vault" path=cubbyhole/ namespace="ID: root. Path: "
+2024-02-27T10:51:12.728+0530 [INFO]  core: successfully mounted: type=system version="v1.15.5+builtin.vault" path=sys/ namespace="ID: root. Path: "
+2024-02-27T10:51:12.729+0530 [INFO]  core: successfully mounted: type=identity version="v1.15.5+builtin.vault" path=identity/ namespace="ID: root. Path: "
+2024-02-27T10:51:12.732+0530 [INFO]  core: successfully mounted: type=token version="v1.15.5+builtin.vault" path=token/ namespace="ID: root. Path: "
+2024-02-27T10:51:12.732+0530 [INFO]  rollback: Starting the rollback manager with 256 workers
+2024-02-27T10:51:12.733+0530 [INFO]  rollback: starting rollback manager
+2024-02-27T10:51:12.733+0530 [INFO]  core: restoring leases
+2024-02-27T10:51:12.736+0530 [INFO]  expiration: lease restore complete
+2024-02-27T10:51:12.739+0530 [INFO]  identity: entities restored
+2024-02-27T10:51:12.739+0530 [INFO]  identity: groups restored
+2024-02-27T10:51:12.739+0530 [INFO]  core: Recorded vault version: vault version=1.15.5 upgrade time="2024-02-27 05:21:12.739716904 +0000 UTC" build date=2024-01-26T14:53:40Z
+2024-02-27T10:51:12.740+0530 [INFO]  core: post-unseal setup complete
+2024-02-27T10:51:12.741+0530 [INFO]  core: root token generated
+2024-02-27T10:51:12.741+0530 [INFO]  core: pre-seal teardown starting
+2024-02-27T10:51:12.741+0530 [INFO]  rollback: stopping rollback manager
+2024-02-27T10:51:12.741+0530 [INFO]  core: pre-seal teardown complete
+2024-02-27T10:51:12.741+0530 [INFO]  core.cluster-listener.tcp: starting listener: listener_address=127.0.0.1:8201
+2024-02-27T10:51:12.742+0530 [INFO]  core.cluster-listener: serving cluster requests: cluster_listen_address=127.0.0.1:8201
+2024-02-27T10:51:12.742+0530 [INFO]  core: post-unseal setup starting
+2024-02-27T10:51:12.742+0530 [INFO]  core: loaded wrapping token key
+2024-02-27T10:51:12.742+0530 [INFO]  core: successfully setup plugin runtime catalog
+2024-02-27T10:51:12.742+0530 [INFO]  core: successfully setup plugin catalog: plugin-directory=""
+2024-02-27T10:51:12.743+0530 [INFO]  core: successfully mounted: type=system version="v1.15.5+builtin.vault" path=sys/ namespace="ID: root. Path: "
+2024-02-27T10:51:12.744+0530 [INFO]  core: successfully mounted: type=identity version="v1.15.5+builtin.vault" path=identity/ namespace="ID: root. Path: "
+2024-02-27T10:51:12.744+0530 [INFO]  core: successfully mounted: type=cubbyhole version="v1.15.5+builtin.vault" path=cubbyhole/ namespace="ID: root. Path: "
+2024-02-27T10:51:12.746+0530 [INFO]  core: successfully mounted: type=token version="v1.15.5+builtin.vault" path=token/ namespace="ID: root. Path: "
+2024-02-27T10:51:12.746+0530 [INFO]  rollback: Starting the rollback manager with 256 workers
+2024-02-27T10:51:12.746+0530 [INFO]  rollback: starting rollback manager
+2024-02-27T10:51:12.747+0530 [INFO]  core: restoring leases
+2024-02-27T10:51:12.747+0530 [INFO]  expiration: lease restore complete
+2024-02-27T10:51:12.748+0530 [INFO]  identity: entities restored
+2024-02-27T10:51:12.748+0530 [INFO]  identity: groups restored
+2024-02-27T10:51:12.748+0530 [INFO]  core: post-unseal setup complete
+2024-02-27T10:51:12.748+0530 [INFO]  core: vault is unsealed
+2024-02-27T10:51:12.755+0530 [INFO]  core: successful mount: namespace="" path=secret/ type=kv version=""
+WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory
+and starts unsealed with a single unseal key. The root token is already
+authenticated to the CLI, so you can immediately begin using Vault.
+
+You may need to set the following environment variables:
+
+    $ export VAULT_ADDR='http://127.0.0.1:8200'
+
+The unseal key and root token are displayed below in case you want to
+seal/unseal the Vault or re-authenticate.
+
+Unseal Key: 55Q13S7VtViiDI3rmP3ddLPbUi9okYCEPWhV9Og1ckU=
+Root Token: hvs.0V0CHN5vcCzgs188zNOUxeGp
+
+Development mode should NOT be used in production installations!
 Step 2 : Set VAULT_ADDR by exporting to environment variable - export VAULT_ADDR='http://127.0.0.1:8200'
 
 Step 3 : Set Root Token by exporting to environment variable - export VAULT_TOKEN="hvs.6j4cuewowBGit65rheNoceI7"
