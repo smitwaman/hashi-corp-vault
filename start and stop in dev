@@ -87,3 +87,17 @@ Step 2 : Set VAULT_ADDR by exporting to environment variable - export VAULT_ADDR
 Step 3 : Set Root Token by exporting to environment variable - export VAULT_TOKEN="hvs.6j4cuewowBGit65rheNoceI7"
 
 Step 4 : Verify the status of vault server by running the command - $ vault status
+vault status
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    1
+Threshold       1
+Version         1.15.5
+Build Date      2024-01-26T14:53:40Z
+Storage Type    inmem
+Cluster Name    vault-cluster-457032bd
+Cluster ID      8a76e611-9e6d-5b46-eac2-459871b6b011
+HA Enabled      false
