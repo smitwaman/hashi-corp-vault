@@ -1,0 +1,43 @@
+▬▬▬▬▬▬ ⭐️ CLI command for handling vault policy⭐️ ▬▬▬▬▬▬ 
+
+1. List vault policies 
+$ vault policy list
+
+2. Write your custom policy 
+$ vault policy write my-policy -  EOF
+Dev servers have version 2 of KV secrets engine mounted by default, so will
+need these paths to grant permissions:
+path "secret/data/*" {
+  capabilities = ["create", "update"]
+}
+
+path "secret/data/foo" {
+  capabilities = ["read"]
+}
+EOF
+
+
+3. Read Vault policy details 
+$ vault policy read my-policy
+
+4. Delete Vault policy by policy name 
+$ vault policy delete my-policy
+
+5. Attach token to policy 
+$ export VAULT_TOKEN="$(vault token create -field token -policy=my-policy)"
+
+
+6. Associate auth method with policy 
+$ vault write auth/approle/role/my-role \
+    secret_id_ttl=10m \
+    token_num_uses=10 \
+    token_ttl=20m \
+    token_max_ttl=30m \
+    secret_id_num_uses=40 \
+    token_policies=my-policy
+
+7. Generate and Export Role ID
+export ROLE_ID="$(vault read -field=role_id auth/approle/role/my-role/role-id)"
+
+8. Generate and Export Secret ID
+export SECRET_ID="$(vault write -f -field=secret_id auth/approle/role/my-role/secret-id)"
