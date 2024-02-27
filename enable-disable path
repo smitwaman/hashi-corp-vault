@@ -1,0 +1,14 @@
+1. List secret engine path
+2. Enable secret engine path
+3. Disable secret engine path
+
+▬▬▬▬▬▬ ⭐️ Command for Secret Engine ⭐️ ▬▬▬▬▬▬ 
+
+1. Enable custom secret engine
+$ vault secrets enable -path=my-custom-secret-engine-1 kv 
+
+2. List all the secret engine available in vault
+$ vault secrets list -detailed
+
+3. Disable secret engine 
+$ vault secrets disable my-custom-secret-engine-1
