@@ -20,3 +20,13 @@ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://
 Step 5 - Update and install.
 
 sudo apt update && sudo apt install vault
+
+
+
+##simple installation using docker
+
+docker pull hashicorp/vault:1.15
+docker run --name=vault -p 8200:8200 -d hashicorp/vault:1.15
+
+for token
+docker logs vault
