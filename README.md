@@ -19,4 +19,4 @@ Root Token: hvs.GpM2srywL6YXVdhct0v6OdM8
 
 Copy token and paste into token 
 
-![op for vault]()
+![op for vault](https://github.com/smitwaman/credmnt/blob/main/images/Screenshot%202024-03-01%20192834.png)
